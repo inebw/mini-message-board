@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Mini Message Board</title>
+</head>
+<body>
+    <h1>Mini Message Board!</h1>
+    <ul>
+        <% messages.forEach((message) => {%>
+            <h3>Username: <%= message.user %></h3>
+            <p>Message: <%= message.text %></p>
+            <p>Added on: <%= message.added %></p>
+        <% }) %>
+    </ul>
+    <button ><a href="/new">Send new message</a></button>
+</body>
+</html>
