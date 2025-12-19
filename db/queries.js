@@ -6,11 +6,12 @@ async function getTable() {
 }
 
 async function insertMessage(username, message, date) {
+    const {rows} = await pool.query('select count(*) from message_board;')
     await pool.query(`
         INSERT INTO message_board
-        (username, text, added)
+        (id, username, text, added)
         VALUES
-        ('${username}', '${message}', '${date}');
+        (${parseInt(rows[0].count + 1)}, '${username}', '${message}', '${date}');
         `)   
 }
 

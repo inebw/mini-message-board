@@ -10,7 +10,7 @@ indexRouter.get('/', async (req, res) => {
 indexRouter.get('/new', (req, res) => res.render('newMessage'))
 indexRouter.post('/new', async (req, res) => {
   const {username, message, date} = req.body;
-  queries.insertMessage(username, message, date);
+  await queries.insertMessage(username, message, date);
   res.redirect('/')
 })
 
