@@ -10,7 +10,7 @@
     <h1>Mini Message Board!</h1>
     <ul>
         <% messages.forEach((message) => {%>
-            <h3>Username: <%= message.user %></h3>
+            <h3>Username: <%= message.username %></h3>
             <p>Message: <%= message.text %></p>
             <p>Added on: <%= message.added %></p>
         <% }) %>
